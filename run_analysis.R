@@ -29,11 +29,13 @@ activityPerformed$Activity <- factor(activityPerformed$Activity,levels=activityL
 activityDataset <- cbind(subjectData, activityPerformed, activityData)
 
 ## changing the activities listed to lower case
-## may want to move this up 
 activityDataset$Activity <- sapply(activityDataset$Activity, tolower)
 
-
-## need to create better variable names
+## update variable names
+names(activityDataset) <- gsub("\\(\\)-",".",names(activityDataset))
+names(activityDataset) <- gsub("\\(\\)","", names(activityDataset))
+names(activityDataset) <- sub("^t","time", names(activityDataset))
+names(activityDataset) <- sub("^f","frequency", names(activityDataset))
 
 ## create a final dataset that groups by subject and activity and averages the 
 ##     mean and std measurements
