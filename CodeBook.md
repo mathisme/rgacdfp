@@ -1,12 +1,27 @@
-## need to also add how it was averaged and grouped
+# Codebook for the summaryDataset in tidy.txt
+After merging all test and training sets, extracting measures on mean and standard deviations, and merging the subject, activity, and measurements datasets, summaryDataset was createdGrouping the data frame by subject and activity and then taking a summary of the means of the measured data
+Afterwords the word 'Average ' was added to the beginning of the variable names for the measured variables.
 
-# Description of variables
+## Description of variables
 * Subject -- an integer from 1 to 30 that identifies one of the thrity subjects
-* Activity -- the activity the subject was performing at the time ofthe recording.  
+* Activity -- the activity the subject was performing at the time of the recording.
+Activities have the following labeled values
+1. walking
+2. walking_upstairs
+3. walking_downstairs
+4. sitting
+5. standing
+6. laying
 * For a description of the measured data please see the original codebook [features_info.txt](https://github.com/mathisme/rgacdfp/blob/master/Data/features_info.txt)
 
-# Adjustment to original variable names for the measured data
-The list of original variables can be found [here](https://github.com/mathisme/rgacdfp/blob/master/Data/features.txt) 
+## Adjustment to original variable names for the measured data
+The list of original variables can be found [here](https://github.com/mathisme/rgacdfp/blob/master/Data/features.txt)
+
+To make the variable names more readable, the following steps were completed
+* 't' was replaced with 'time' for all variables with names starting with t
+* 'f' was replaced with 'frequency' for all variables starting with 'f'
+* parenthasis were removed from variable names
+* for the one dimensional measurements the hyphen before the 'X', 'Y' or 'Z' was replaced by a period
 
 
 | Variable Name | Variable Type |
